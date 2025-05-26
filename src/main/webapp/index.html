@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body x-data="{ dark: false, menuOpen: false }" :class="dark ? 'bg-gray-900 text-black-200' : 'bg-gradient-to-br from-purple-100 via-pink-100 to-yellow-100 text-gray-900'" class="transition-colors duration-500">
+
+  <div class="max-w-4xl mx-auto p-6 space-y-10">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white dark:bg-gray-900 z-10 shadow">
+      <div class="flex justify-between items-center py-4 boder">
+        <span class="font-bold text-lg">My Portfolio</span>
+        <button class="md:hidden" @click="menuOpen = !menuOpen">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div class="hidden md:flex gap-4 text-sm font-medium">
+          <a href="#home" class="hover:underline">Home</a>
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="#skills" class="hover:underline">Skills</a>
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#resume" class="hover:underline">Resume</a>
+          <a href="#blog" class="hover:underline">Blog</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+      </div>
+      <div x-show="menuOpen" class="flex flex-col md:hidden gap-2 pb-4">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#resume" class="hover:underline">Resume</a>
+        <a href="#blog" class="hover:underline">Blog</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <div class="text-right">
+      <button @click="dark = !dark" class="px-3 py-1 rounded-full bg-purple-200 dark:bg-gray-700 flex items-center gap-2">
+        <svg x-show="!dark"  class="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15a5 5 0 100-10 5 5 0 000 10z"/></svg>
+        <svg x-show="dark"  class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293a8 8 0 11-10.586-10.586A8 8 0 0017.293 13.293z"/></svg>
+        <span x-text="dark ? 'Light Mode' : 'Dark Mode'"></span>
+      </button>
+    </div>
+
+    <!-- Homepage -->
+    <section id="home" class="text-center space-y-4 animate-fade-in">
+      <h1 class="text-4xl font-bold">Hi, I'm <br>Bhanu Prakash Reddy Gadikota</h1>
+      <p class="text-lg">A passionate Java developer.</p>
+      <a href="#projects" class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded hover:from-pink-500 hover:to-yellow-500 transition">View My Work</a>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="space-y-4 animate-fade-in">
+      <h2 class="text-2xl font-bold">Projects</h2>
+
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold">Inventory Management System</h3>
+        <p>Java, Spring Boot, MySQL - Full CRUD, role-based access control, REST APIs.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold">E-Commerce Backend</h3>
+        <p>Spring Boot, Hibernate, MySQL - Scalable architecture, JWT Auth, API docs.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="space-y-4 animate-fade-in">
+      <h2 class="text-2xl font-bold">Skills</h2>
+      <ul class="list-disc list-inside">
+        <li>Languages: Java,HTML,CSS, SQL</li>
+        <li>Frameworks: Spring Boot</li>
+        <li>Tools: Git,Postman</li>
+        <li>Databases: MySQL</li>
+      </ul>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="space-y-4 animate-fade-in">
+      <h2 class="text-2xl font-bold">About Me</h2>
+
+      <p>I’m a passionate and dedicated <strong>Full Stack Java Developer</strong> with a strong foundation in
+        both frontend and backend technologies. I recently completed a<strong></strong> Bachelor’s degree in
+        Electronics and Communication Engineering</strong>, along with a <strong>4-month internship</strong>, where I worked on real-world
+        projects using Java and Spring Boot. I love building clean, functional, and
+        user-friendly web applications — from designing responsive interfaces to crafting
+        efficient backend systems.</p>
+
+
+      <p>To strengthen my skills, I’ve completed certifications in <strong>Java, Spring Boot, and
+        Full Stack Development</strong> , which helped me gain a structured understanding of the software
+        development lifecycle. During my internship, I worked in an agile team and got hands-on
+        experience with <strong>REST APIs, MySQL databases, Git, and modern development tools</strong>. I learned
+         how to write maintainable code, communicate in a team setting, and manage deadlines
+         effectively.</p>
+
+
+      <p>Outside of programming, I enjoy exploring tech blogs, working on personal projects,
+        and staying updated with new tools and frameworks. I’m also passionate about
+        problem-solving and regularly practice coding on platforms like HackerRank and LeetCode.
+        I’m currently seeking a full-time opportunity as a Software Engineer, where I can grow,
+        contribute, and collaborate on impactful software solutions.</p>
+
+
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="space-y-4 animate-fade-in">
+      <h2 class="text-2xl font-bold">Resume</h2>
+      <a href="/potfolo/Resume.pdf" download class="text-purple-600 underline">Download PDF</a>
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <p><strong>Experience:</strong> 4-month internship experience developing Java and Spring Boot applications</p>
+        <p><strong>Education:</strong> B-Tech in Electronics and Communication Engineering</p>
+        <p><strong>Certifications:</strong> Java,NPTEL</p>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="space-y-4 animate-fade-in">
+      <h2 class="text-2x1 font-bold">Blog</h2>
+
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow" class="blog">
+        <h3 class="text-xl font-semibold">🚀 My Journey Into Full Stack Java Development — And What’s Next</h3>
+        <p>As a recent graduate with a deep passion for technology, my journey into software development has been both
+             challenging and rewarding. With a strong foundation in <strong>Java full stack development</strong> ,
+             I’m now actively seeking my first full-time opportunity as a <strong>Software Engineer</strong> .</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow" class="blog">
+        <h3 class="text-xl font-semibold">🧩 Why I Chose Full Stack Java Development</h3>
+        <p>Java was one of the first programming languages I learned, and its robustness and versatility immediately drew me in.
+             As I dove deeper into backend development with <strong>Spring Boot</strong>, I also began to explore frontend technologies like <strong>HTML</strong> <STrong>css</STrong>.
+            This natural curiosity led me to become a <strong>full stack developer</strong>, capable of building end-to-end web applications.</p>
+      </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow" class="blog">
+        <h3 class="text-xl font-semibold">💼 Internship Experience</h3>
+        <p>Recently, I completed a <strong>4-month internship</strong>, where I worked on real-world projects using <strong>Java, Spring Boot, and MySQL</strong> .
+            This experience gave me hands-on exposure to REST APIs, database design, debugging, and working in an agile team — all
+             of which sharpened my problem-solving skills and strengthened my understanding of clean, maintainable code.</p>
+      </div>
+
+       <div class="bg-white dark:bg-gray-800 p-4 rounded shadow" class="blog">
+        <h3 class="text-xl font-semibold">🌱 What I'm Looking For</h3>
+        <p>I'm looking for a <strong>software engineering</strong> role where I can continue to learn, grow, and contribute to impactful projects.
+            I'm excited to work in collaborative environments where knowledge sharing and innovation are encouraged.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow" class="blog">
+        <h3 class="text-xl font-semibold">✨ Final Thoughts</h3>
+        <p>Building software that solves real problems is something I find deeply fulfilling. While I'm early in my career,
+             I bring enthusiasm, discipline, and a strong will to learn and adapt.
+             If you’re hiring or know of any openings,
+             feel free to connect — I'd love to be part of a team that builds great software.</p>
+      </div>
+
+
+
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="space-y-4 animate-fade-in">
+      <h2 class="text-2xl font-bold">Contact</h2>
+      <form class="space-y-2" action="contact" method="POST">
+        <input name="name" type="text" placeholder="Your Name" class="w-full border p-2 rounded dark:bg-gray-700" required />
+        <input name="email" type="email" placeholder="Your Email" class="w-full border p-2 rounded dark:bg-gray-700" required />
+        <textarea name="message" placeholder="Your Message" class="w-full border p-2 rounded dark:bg-gray-700" required></textarea>
+        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Send Message</button>
+      </form>
+      <div class="flex gap-4">
+        <a href="https://github.com/yourusername" target="_blank" class="text-purple-600 dark:text-purple-300 underline">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="text-purple-600 dark:text-purple-300 underline">LinkedIn</a>
+        <a href="mailto:your@email.com" class="text-purple-600 dark:text-purple-300 underline">Email</a>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
