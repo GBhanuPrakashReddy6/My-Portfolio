@@ -1,3 +1,7 @@
+[submodule "My-Portfolio"]
+    path = My-Portfolio
+    url = https://github.com/GbhanuPrakashReddy6/My-Portfolio.git
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
